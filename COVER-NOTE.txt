@@ -1,0 +1,38 @@
+To: Internal Revenue Service
+      Research, Applied Analytics and Statistics (RAAS)
+      IRS Criminal Investigation, Nationally Coordinated Investigations Unit
+      (unsolicited citizen-developed screening tool — not an official filing)
+
+From: James Murphy
+
+Re:   Settlement Watch 1.0 — public-docket settlement screening workbook
+Date: 11 September 2026
+
+------------------------------------------------------------------------
+
+I built a small, offline-friendly program that watches named people and
+companies in public US court records, looks for settlement-like docket
+activity, and writes an Excel workbook of possible mischaracterized or
+collusive settlement transfers for a human analyst to review.
+
+It is a lead screen, not a finding. It does not prove tax evasion. It
+does not access IRS systems. It reads only public CourtListener / RECAP
+dockets and scores transparent heuristics (related-looking parties, very
+fast stipulated or consent judgments, contract suits described as
+physical-injury awards, sealed round-number payoffs, assignments and
+structures, repeat suits).
+
+Outputs are the same kind of artifact IRS-CI has described publicly as
+useful for lead review: Excel flat files, plus CSV and JSON so a
+authorized analyst can load rows into whatever tool they already use.
+There is no CIMIS, RRP, EFDS, MeF, or SarGenXpress login in this package
+and there should not be. Those systems are yours.
+
+Please read WHAT-IT-DOES.txt and IRS-INTEROP.txt before treating any
+row as a lead. The bundled watchlist names are fictitious demo data.
+
+If this is useful, use it. If it is not, discard it. Either way:
+
+You're welcome.
+
+— James Murphy

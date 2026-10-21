@@ -1,0 +1,151 @@
+[
+  {
+    "docket_id": 91000001,
+    "caseName": "Harbor Creek Holdings LLC v. Harbor Creek Partners LLC",
+    "court": "District Court, S.D. New York",
+    "court_id": "nysd",
+    "docketNumber": "1:24-cv-01001",
+    "dateFiled": "2024-01-02",
+    "dateTerminated": "2024-01-18",
+    "cause": "28:1332 Diversity-Contract",
+    "suitNature": "Contract - Other",
+    "jurisdictionType": "Diversity",
+    "assignedTo": "Demo Judge",
+    "pacer_case_id": "100001",
+    "docket_absolute_url": "/docket/91000001/harbor-creek-holdings-llc-v-harbor-creek-partners-llc/",
+    "party": [
+      "Harbor Creek Holdings LLC",
+      "Harbor Creek Partners LLC"
+    ],
+    "attorney": [
+      "A. Counsel"
+    ],
+    "recap_documents": [
+      {
+        "description": "COMPLAINT against Harbor Creek Partners LLC. Breach of contract. Jury demand.",
+        "snippet": "Plaintiff seeks compensatory damages for unpaid invoices."
+      },
+      {
+        "description": "STIPULATION of Dismissal and Consent Judgment. Settlement confidential.",
+        "snippet": "The parties stipulate to entry of consent judgment in the amount of $500,000, characterized as damages for personal physical injury and physical sickness, to be paid as a structured settlement. Papers to be sealed."
+      }
+    ]
+  },
+  {
+    "docket_id": 91000002,
+    "caseName": "Alvarez v. National Parcel Service Inc",
+    "court": "District Court, N.D. Illinois",
+    "court_id": "ilnd",
+    "docketNumber": "1:22-cv-03310",
+    "dateFiled": "2022-03-01",
+    "dateTerminated": "2024-06-15",
+    "cause": "28:1331 Fed. Question - Employment",
+    "suitNature": "Employment",
+    "jurisdictionType": "Federal Question",
+    "assignedTo": "Demo Judge",
+    "pacer_case_id": "100002",
+    "docket_absolute_url": "/docket/91000002/alvarez-v-national-parcel-service-inc/",
+    "party": [
+      "Maria Alvarez",
+      "National Parcel Service Inc"
+    ],
+    "attorney": [
+      "B. Advocate",
+      "C. Defense"
+    ],
+    "recap_documents": [
+      {
+        "description": "COMPLAINT (Title VII / wage claim).",
+        "snippet": "Plaintiff alleges unpaid overtime and retaliation."
+      },
+      {
+        "description": "Joint stipulation of settlement and dismissal with prejudice.",
+        "snippet": "The parties have reached a settlement of employment claims. Case dismissed with prejudice."
+      }
+    ]
+  },
+  {
+    "docket_id": 91000003,
+    "caseName": "Keene v. Keene",
+    "court": "District Court, C.D. California",
+    "court_id": "cacd",
+    "docketNumber": "2:25-cv-04412",
+    "dateFiled": "2025-04-01",
+    "dateTerminated": "2025-04-20",
+    "cause": "28:1332 Diversity-Contract",
+    "suitNature": "Contract - Other",
+    "jurisdictionType": "Diversity",
+    "assignedTo": "Demo Judge",
+    "pacer_case_id": "100003",
+    "docket_absolute_url": "/docket/91000003/keene-v-keene/",
+    "party": [
+      "Robert Keene",
+      "Linda Keene"
+    ],
+    "attorney": [
+      "D. Filing"
+    ],
+    "recap_documents": [
+      {
+        "description": "REQUEST for Entry of Default Judgment.",
+        "snippet": "Plaintiff requests default judgment in the amount of $1,000,000 together with assignment of settlement proceeds to a structured settlement annuity."
+      }
+    ]
+  },
+  {
+    "docket_id": 91000004,
+    "caseName": "Pacific Rim Textiles Inc v. Ocean Freight LLC",
+    "court": "District Court, C.D. California",
+    "court_id": "cacd",
+    "docketNumber": "2:23-cv-08821",
+    "dateFiled": "2023-09-01",
+    "dateTerminated": null,
+    "cause": "28:1332 Diversity-Contract",
+    "suitNature": "Contract - Other",
+    "jurisdictionType": "Diversity",
+    "assignedTo": "Demo Judge",
+    "pacer_case_id": "100004",
+    "docket_absolute_url": "/docket/91000004/pacific-rim-textiles-inc-v-ocean-freight-llc/",
+    "party": [
+      "Pacific Rim Textiles Inc",
+      "Ocean Freight LLC"
+    ],
+    "attorney": [
+      "E. Commerce"
+    ],
+    "recap_documents": [
+      {
+        "description": "COMPLAINT for goods sold and delivered.",
+        "snippet": "Plaintiff seeks $87,412.18 for unpaid shipments. Case remains open."
+      }
+    ]
+  },
+  {
+    "docket_id": 91000005,
+    "caseName": "Harbor Creek Holdings LLC v. North Pier Trading Co",
+    "court": "District Court, D. New Jersey",
+    "court_id": "njd",
+    "docketNumber": "2:23-cv-01990",
+    "dateFiled": "2023-05-12",
+    "dateTerminated": "2023-12-01",
+    "cause": "28:1332 Diversity-Contract",
+    "suitNature": "Contract - Other",
+    "jurisdictionType": "Diversity",
+    "assignedTo": "Demo Judge",
+    "pacer_case_id": "100005",
+    "docket_absolute_url": "/docket/91000005/harbor-creek-holdings-llc-v-north-pier-trading-co/",
+    "party": [
+      "Harbor Creek Holdings LLC",
+      "North Pier Trading Co"
+    ],
+    "attorney": [
+      "F. Counsel"
+    ],
+    "recap_documents": [
+      {
+        "description": "STIPULATION of Dismissal with prejudice after settlement.",
+        "snippet": "Parties settled commercial dispute. No amount stated."
+      }
+    ]
+  }
+]

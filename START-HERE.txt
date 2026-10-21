@@ -1,0 +1,20 @@
+START HERE
+
+1. Read COVER-NOTE.txt          (the “You're welcome — James Murphy” letter)
+2. Read WHAT-IT-DOES.txt        (full description of the program)
+3. Read IRS-INTEROP.txt         (what “works with IRS tools” actually means)
+4. Read HOW-TO-SHARE.txt        (this was not emailed to the IRS)
+
+To run it on this Mac:
+
+    Open Roach Detector from Applications (local window + in-app spreadsheet).
+
+    or double-click run.command for the command-line demo.
+
+    or:
+
+    python3 -m pip install -r requirements.txt
+    python3 -m settlement_watch
+
+A finished demo workbook is already in sample-output/settlement_watch_leads.xlsx
+(fictitious names, for illustration).

@@ -1,0 +1,32 @@
+HOW THIS PACKAGE WAS (AND WAS NOT) DELIVERED
+
+This archive was built on the author’s machine. It was NOT emailed,
+uploaded, or otherwise transmitted to the Internal Revenue Service by
+the software that generated it.
+
+The IRS does not accept unsolicited programs through public email.
+Sending a zip file to a general IRS address is the wrong channel and
+will usually be blocked.
+
+If James Murphy (or anyone else) wants the Service to see this tool,
+use an official path — do not improvise:
+
+  1. Software / analytics interest
+     IRS procurement and official technology intake. github.com/IRSgov
+     is not a drop-box for investigative tools.
+
+  2. A specific taxpayer you believe under-reported income
+     That is a tip, not a software submission:
+       Form 3949-A (Information Referral)
+       Form 211 (Whistleblower, if you are claiming an award)
+     https://www.irs.gov/
+
+  3. Do not
+     - Email random irs.gov inboxes with this zip
+     - Call it an official IRS product
+     - Treat demo names as real targets
+     - File a SAR from this tool (you are not the BSA filer)
+
+The cover note (COVER-NOTE.txt) is a letter you can print or attach IF
+you choose a legitimate channel. It is not a stamp that the IRS asked
+for this, reviewed this, or will use this.

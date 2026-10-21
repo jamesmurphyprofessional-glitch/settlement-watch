@@ -1,0 +1,74 @@
+SETTLEMENT WATCH — WORKING WITH IRS TOOLS (HONEST INTEROP)
+
+This program cannot log into IRS systems. That is by design.
+
+Public IRM and privacy documents describe how IRS-CI already moves leads:
+
+  - RAAS analytics results have been sent to IRS-CI as Excel flat files
+    for NCIU review (IRS PIA language on fraud-detection lead files).
+  - CIMIS (IRM 9.9.4) is the internal investigation database. Outsiders
+    cannot write to it.
+  - Exam / Collection criminal referrals use Form 2797, which is an
+    internal IRS form. This tool does not generate Form 2797.
+  - Prosecution reports use SarGenXpress (Special Agent Report / Summary
+    of Investigation). This tool does not generate those reports.
+  - BSA SARs and CTRs are filed through FinCEN by financial institutions.
+    This tool does not file SARs.
+  - Modernized e-File XML schemas are for tax-return transmitters, not
+    for court-docket lead files.
+
+What “plays nice” actually means here
+-------------------------------------
+Produce files an authorized IRS analyst can open with software they
+already have, using stable column names and a field dictionary.
+
+  1. Excel workbook (.xlsx)
+     Matches the publicly described “Excel flat file / dashboard” lead
+     style. Open in Microsoft Excel or compatible tools.
+
+  2. CSV (UTF-8 with BOM)
+     Load into Excel, Access, Tableau, Python/pandas, or a staging table.
+     Column names are snake_case and documented in field_dictionary.csv.
+
+  3. JSON
+     Same rows plus a disclaimer object, for scripts.
+
+  4. Lead narratives (plain text + Excel sheet)
+     Paste into a case note, workpaper, or (if an employee later opens a
+     matter) the narrative block of an internal referral. The narrative
+     states that it is not a Form 2797 and not a determination.
+
+Suggested mapping if an IRS employee imports a row
+--------------------------------------------------
+Settlement Watch field     Closest public analogue
+-------------------------  ----------------------------------------------
+subject_name               Subject / taxpayer name on a lead
+subject_type               Individual vs entity
+allegation / flag_codes    Issue tags (characterization, related party)
+information_source         Source of information = public court record
+source_url                 Exhibit / public source
+date_filed / terminated    Event dates
+amount_parsed_usd          Alleged amount (often unknown)
+docket_number / court      Third-party identifier
+risk_score / risk_band     Triage only; do not load as a CIMIS field
+lead_id                    Local workpaper key — not a CIMIS investigation
+                           number and not an SSN/EIN
+
+Do not send this zip file to a random IRS email address. Unsolicited
+executables and archives are malware-filtered. If the Service wants the
+code, an authorized employee should take it through official intake.
+See HOW-TO-SHARE.txt.
+
+Legal / tax notes the heuristics care about
+-------------------------------------------
+  IRC §104(a)(2)  exclusion for damages on account of personal physical
+                  injuries or physical sickness. Emotional distress and
+                  punitive damages are generally taxable. Relabeling a
+                  commercial payment as a physical-injury settlement is
+                  a known abuse.
+  IRC §61         gross income. Most settlement proceeds are income
+                  unless a specific exclusion applies.
+  Related-party   a collusive suit between insiders can disguise a gift,
+  transfers       compensation, or dividend as a “court-ordered” payment.
+
+This file is documentation, not legal advice and not an IRS position.

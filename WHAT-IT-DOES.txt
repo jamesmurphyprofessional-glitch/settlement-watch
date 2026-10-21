@@ -1,0 +1,140 @@
+SETTLEMENT WATCH — WHAT IT IS AND WHAT IT DOES
+Author: James Murphy
+Version: 1.0.0
+
+------------------------------------------------------------------------
+1. One-sentence summary
+------------------------------------------------------------------------
+A command-line program that takes a list of people and companies, searches
+public US federal court dockets for those names, looks for settlement-like
+activity, scores public-text red flags that can indicate a civil settlement
+being used as a disguised money transfer or a mischaracterized (tax-free)
+payment, and writes the results to a spreadsheet and related files.
+
+It is a SCREENING tool. It is not a determination that anyone evaded tax.
+
+------------------------------------------------------------------------
+2. Why this exists
+------------------------------------------------------------------------
+Civil settlements can be legitimate, taxed, or excluded from income (for
+example damages for personal physical injuries under IRC §104(a)(2)). They
+can also be misused:
+
+  - A related-party "lawsuit" that exists to paper a transfer.
+  - A business/contract payment labeled as a physical-injury award.
+  - A fast consent or default judgment that creates a fake collectible debt.
+  - An assignment or structured settlement that inserts extra parties
+    between payor and payee.
+
+Public dockets rarely prove those facts. They sometimes show enough smoke
+that a trained examiner should look. That is all this program does.
+
+------------------------------------------------------------------------
+3. What you run
+------------------------------------------------------------------------
+  python3 -m settlement_watch check --watchlist watchlist.csv --out ./output
+
+  python3 -m settlement_watch check --demo --out ./output
+      (uses bundled sample dockets; no internet / no API token)
+
+Watchlist columns: name, entity_type, aliases, notes.
+
+------------------------------------------------------------------------
+4. Where the court data comes from
+------------------------------------------------------------------------
+Live mode calls the public CourtListener REST API (RECAP / PACER-derived
+federal dockets):
+
+  https://www.courtlistener.com/api/rest/v4/search/
+
+For each watchlist name it searches by party name and, separately, for
+settlement / consent-judgment / stipulation language involving that party.
+It does not scrape PACER, does not buy PACER documents, and does not
+bypass PACER fees. Coverage is whatever RECAP already has.
+
+Demo mode never calls the network. It scores fixtures/demo_dockets.json.
+
+------------------------------------------------------------------------
+5. How scoring works
+------------------------------------------------------------------------
+Each matching docket is converted to text (caption, parties, nature of
+suit, docket-entry descriptions and snippets). Heuristics then fire:
+
+  SETTLEMENT_INDICATED      settlement / stipulation / consent / terminated
+  RAPID_RESOLUTION          filed-to-terminated in 45 days or less
+  CONSENT_JUDGMENT          consent judgment / decree / order
+  DEFAULT_JUDGMENT          default judgment language
+  SEALED_OR_CONFIDENTIAL    sealed, confidential, in camera
+  STIPULATED_DISMISSAL      stipulation of dismissal
+  CHARACTERIZATION_MISMATCH commercial/contract docket + injury/§104 language
+  ROUND_DOLLAR_AMOUNT       round $50,000 / $100,000-type figures
+  SHARED_SURNAME_PARTIES    same surname or shared entity core on both sides
+  STRUCTURED_SETTLEMENT     structured settlement / annuity
+  ASSIGNMENT_OF_PROCEEDS    assignment of settlement proceeds
+  MINIMAL_DOCKET_ACTIVITY   few public filings and a fast end
+  REPEAT_LITIGANT           same watch name on multiple dockets in the run
+
+Weights are added and capped at 100.
+
+  0–14   INFO
+  15–34  LOW
+  35–59  MEDIUM
+  60–100 HIGH
+
+MEDIUM and HIGH are written to the Flagged_Review sheet and to
+settlement_watch_flagged.csv. Everything goes to All_Matches.
+
+These weights are starting points for triage. They are not a model of
+the Internal Revenue Code and they are not trained on IRS case outcomes.
+
+------------------------------------------------------------------------
+6. What files it writes
+------------------------------------------------------------------------
+  settlement_watch_leads.xlsx   Excel workbook for human review
+      Sheet Disclaimer          limitations and how to use the file
+      Sheet Flagged_Review      MEDIUM/HIGH only
+      Sheet All_Matches         every scored docket
+      Sheet Field_Dictionary    column meanings
+      Sheet Lead_Narratives     paste-ready write-ups
+
+  settlement_watch_leads.csv    UTF-8 with BOM (Excel-friendly)
+  settlement_watch_flagged.csv  MEDIUM/HIGH CSV
+  settlement_watch_leads.json   same rows as JSON plus a disclaimer
+  lead_narratives.txt           narratives as plain text
+  field_dictionary.csv          field names and analyst use
+
+------------------------------------------------------------------------
+7. What it does not do
+------------------------------------------------------------------------
+  - Does not decide that a taxpayer committed a crime.
+  - Does not file a BSA Suspicious Activity Report.
+  - Does not create a Form 2797 referral, Form 211 claim, or Special
+    Agent Report.
+  - Does not log into CIMIS, RRP, EFDS, MeF, IDES, or SarGenXpress.
+  - Does not pull tax returns, bank records, or non-public PACER PDFs.
+  - Does not identify EINs or SSNs. Court dockets usually do not have them.
+  - Does not cover most state-court settlements.
+  - Does not run in the background. You run it when you want a refresh.
+
+------------------------------------------------------------------------
+8. Intended user
+------------------------------------------------------------------------
+A human analyst (journalist, investigator, or — if the IRS chooses to
+evaluate it — an IRS employee with authorization to look at the named
+parties). The operator supplies the watchlist. The program does not ship
+with real taxpayer targets; the example names are fictitious demo data.
+
+------------------------------------------------------------------------
+9. Dependencies and runtime
+------------------------------------------------------------------------
+  Python 3.10+
+  requests
+  openpyxl
+
+Polite rate limiting (about 1.25 seconds between CourtListener calls).
+Optional API token via --token or COURT_LISTENER_TOKEN.
+
+------------------------------------------------------------------------
+10. Tests
+------------------------------------------------------------------------
+  python3 -m unittest discover -s tests -v

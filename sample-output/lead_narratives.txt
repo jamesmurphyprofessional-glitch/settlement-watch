@@ -1,0 +1,69 @@
+
+
+------------------------------------------------------------------------LEAD SCREENING NARRATIVE — NOT A DETERMINATION OF TAX EVASION
+This is a public-record screen for a trained examiner. It is not a finding, not a Form 2797, and not a SAR.
+
+Subject (watchlist): Harbor Creek Holdings LLC (company)
+Parties: Harbor Creek Holdings LLC; Harbor Creek Partners LLC
+Case: Harbor Creek Holdings LLC v. Harbor Creek Partners LLC
+Court: District Court, S.D. New York (nysd)
+Docket: 1:24-cv-01001
+PACER case id: 100001
+Filed: 2024-01-02  Terminated: 2024-01-18  Days: 16 days
+Nature / cause: Contract - Other
+Amount(s) parsed from public text: $500,000
+Risk score: 100  Band: HIGH  Priority: REVIEW
+Source URL: https://www.courtlistener.com/docket/91000001/harbor-creek-holdings-llc-v-harbor-creek-partners-llc/
+
+Why this was flagged:
+  - SETTLEMENT_INDICATED (5): Matched “Settlement”.
+  - RAPID_RESOLUTION (20): Filed to termination in 16 day(s) (threshold 45). Short, uncontested resolutions can be a collusive-suit indicator and need human review.
+  - CONSENT_JUDGMENT (15): Matched “Consent Judgment”. Consent judgments are sometimes used to paper a transfer.
+  - SEALED_OR_CONFIDENTIAL (10): Matched “sealed”. Confidentiality is common and lawful; it also hides characterization and related-party facts.
+  - STIPULATED_DISMISSAL (8): Matched “STIPULATION of Dismissal”.
+  - CHARACTERIZATION_MISMATCH (25): Docket looks commercial (“Contract”) but resolution text uses injury/§104-style language (“personal physical injury”). IRC §104(a)(2) excludes damages for personal physical injuries; mischaracterization of a business payment as an injury award is a known evasion pattern.
+  - ROUND_DOLLAR_AMOUNT (8): Public text states $500,000. Round figures are weak alone and stronger with other flags.
+  - SHARED_SURNAME_PARTIES (22): Both sides of the caption share the surname “Harbor Creek”. Related-party suits can be used to move money under a court stamp. This is a name heuristic, not proof of relationship.
+  - STRUCTURED_SETTLEMENT (10): Matched “structured settlement”. Structures are often legitimate; they also spread recognition and can obscure the payor.
+  - REPEAT_LITIGANT (10): Harbor Creek Holdings LLC matched 2 dockets in this run. Repeat suits can be a pattern or just an active litigant.
+
+Suggested examiner follow-up if a case is opened:
+  1. Compare the complaint’s cause of action with how any settlement is characterized (especially IRC §104(a)(2) physical-injury claims).
+  2. Test related-party status of plaintiff, defendant, and any assignee or structured-settlement purchaser.
+  3. Match dollars to information returns (1099-MISC/NEC, W-2, or none filed).
+  4. If warranted, request the settlement agreement, release, and payment trail.
+
+Limitation: Public dockets often omit the agreement, the true payor, and tax characterization. Absence of a flag is not clearance.
+
+LEAD SCREENING NARRATIVE — NOT A DETERMINATION OF TAX EVASION
+This is a public-record screen for a trained examiner. It is not a finding, not a Form 2797, and not a SAR.
+
+Subject (watchlist): Robert Keene (person)
+Parties: Robert Keene; Linda Keene
+Case: Keene v. Keene
+Court: District Court, C.D. California (cacd)
+Docket: 2:25-cv-04412
+PACER case id: 100003
+Filed: 2025-04-01  Terminated: 2025-04-20  Days: 19 days
+Nature / cause: Contract - Other
+Amount(s) parsed from public text: $1,000,000
+Risk score: 99  Band: HIGH  Priority: REVIEW
+Source URL: https://www.courtlistener.com/docket/91000003/keene-v-keene/
+
+Why this was flagged:
+  - SETTLEMENT_INDICATED (5): Matched “settlement”.
+  - RAPID_RESOLUTION (20): Filed to termination in 19 day(s) (threshold 45). Short, uncontested resolutions can be a collusive-suit indicator and need human review.
+  - DEFAULT_JUDGMENT (12): Matched “Default Judgment”. Unopposed large judgments can be used to create collectible “debt.”
+  - ROUND_DOLLAR_AMOUNT (8): Public text states $1,000,000. Round figures are weak alone and stronger with other flags.
+  - SHARED_SURNAME_PARTIES (22): Both sides of the caption share the surname “Keene”. Related-party suits can be used to move money under a court stamp. This is a name heuristic, not proof of relationship.
+  - STRUCTURED_SETTLEMENT (10): Matched “structured settlement”. Structures are often legitimate; they also spread recognition and can obscure the payor.
+  - ASSIGNMENT_OF_PROCEEDS (12): Matched “assignment of settlement proceeds”. Assignments can insert a third party into the money trail.
+  - MINIMAL_DOCKET_ACTIVITY (10): Few public filings and a fast termination. May be incomplete RECAP coverage, or a friendly suit.
+
+Suggested examiner follow-up if a case is opened:
+  1. Compare the complaint’s cause of action with how any settlement is characterized (especially IRC §104(a)(2) physical-injury claims).
+  2. Test related-party status of plaintiff, defendant, and any assignee or structured-settlement purchaser.
+  3. Match dollars to information returns (1099-MISC/NEC, W-2, or none filed).
+  4. If warranted, request the settlement agreement, release, and payment trail.
+
+Limitation: Public dockets often omit the agreement, the true payor, and tax characterization. Absence of a flag is not clearance.

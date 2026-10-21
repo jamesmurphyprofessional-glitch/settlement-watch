@@ -1,0 +1,5 @@
+name,entity_type,aliases,notes
+Harbor Creek Holdings LLC,company,Harbor Creek Holdings; Harbor Creek,Example entity for demo scoring
+Maria Alvarez,person,,Example individual — longer employment settlement
+Robert Keene,person,R. Keene,Example individual — related-party style docket
+Pacific Rim Textiles Inc,company,Pacific Rim Textiles,Example company with an open (non-settled) case

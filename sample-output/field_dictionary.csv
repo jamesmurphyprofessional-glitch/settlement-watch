@@ -1,0 +1,23 @@
+﻿field_name,meaning,analyst_use
+lead_id,Stable id for this row (watch name + docket id).,Local workpaper key; not a CIMIS number.
+subject_name,Watchlist name that matched.,CIMIS/subject name analogue for a lead file.
+subject_type,person / company / unknown.,Individual vs entity.
+case_name,Caption.,Court identifier.
+court,Court name.,Venue.
+court_id,CourtListener court id.,Venue code.
+docket_number,Docket number.,Court file number.
+pacer_case_id,PACER case id when present.,PACER lookup.
+date_filed,ISO date filed.,Event date.
+date_terminated,"ISO date terminated, if any.",Disposition date.
+days_to_resolution,"Terminated minus filed, in days.",Speed of resolution.
+nature_of_suit,Nature of suit / cause.,Issue code analogue.
+parties,Party names from the public docket.,Related parties to research.
+amount_parsed_usd,Dollar amounts parsed from public text.,Alleged amount; often missing.
+risk_score,0-100 weighted heuristic.,Sort key for review — not a fraud probability.
+risk_band,INFO / LOW / MEDIUM / HIGH.,Triage band.
+review_priority,IGNORE / BACKGROUND / REVIEW.,Whether an examiner should look.
+flag_codes,Triggered heuristic codes.,Allegation tags.
+flag_details,Human-readable reasons.,Lead narrative facts.
+source_url,CourtListener URL.,Information source.
+information_source,Always public RECAP/CourtListener.,Source-of-information field.
+run_timestamp_utc,When this file was generated.,Workpaper timestamp.
